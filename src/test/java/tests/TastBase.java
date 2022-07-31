@@ -19,13 +19,14 @@ public class TastBase {
         wd = new ChromeDriver();
         wd.manage().window().maximize();
         wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        wd.navigate().to("https://ilcarro-1578153671498.web.app/");
+        wd.navigate().to("https://ilcarro-1578153671498.web.app");
 
     }
 
     @AfterMethod
     public void tearDown(){
-        wd.quit();
+
+       wd.quit();
     }
 
     public void openLoginForm() {
@@ -47,7 +48,7 @@ public class TastBase {
         }
     }
     public void submitLogin() {
-        wd.findElement(By.cssSelector("button[type='submit']")).click();
+        //wd.findElement(By.cssSelector("button[type='submit']")).click();
         wd.findElement(By.xpath("//button[text()='Y’alla!']")).click();
     }
 }
